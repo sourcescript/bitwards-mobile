@@ -1,0 +1,208 @@
+$icon-font-path: "../bower_components/bootstrap-sass-official/assets/fonts/bootstrap/";
+ $blue : #519C9C;
+// bower:scss
+@import "bootstrap-sass-official/assets/stylesheets/bootstrap.scss";
+// endbower
+
+body.main {
+  background: url(../images/background.jpg);
+  background-size: cover;
+
+  #splash {
+    position: relative;
+
+    .logo {
+      img {
+        margin: 0 auto;
+        width: 80%;
+        margin-top: 180px;
+      }
+    }
+    .footer {
+      position: fixed;
+      background-image: url(../images/footer.png);
+      width:150%;
+      bottom: 0;
+      height: 176px;
+      text-align: center;
+      line-height: 176px;
+
+      animation: bounce 8s infinite;     
+    }
+
+
+    .logo-sourcescript {
+      position: fixed;
+      bottom: 0px;
+      width: 100%;
+      height: 176px;
+      z-index: 2;
+       img {
+        display: block;
+        margin: 0 auto;
+        height: 40%;
+        margin-top: 86px;
+      }
+    }
+  }
+}
+
+body.login {
+ 
+
+  background: url(../images/login-bg.png);
+  background-size: cover;
+
+  color: $blue;
+
+  h3 {
+    text-align: center;
+  }
+  .logo {
+    img {
+      margin: 0 auto;
+      width: 70%;
+    }
+
+    margin-bottom: 50px;
+  }
+
+  .tag-line {
+    h3 {
+      font-size: 28px;
+    }
+
+    margin-bottom: 100px;
+  }
+
+ .login-btn {
+    padding: 0 40px;
+
+    .btn-facebook {
+      background-color: $blue;
+      color: #FFF;
+      font-size: 18px;
+    }
+  }
+}
+
+body {
+  #dashboard {
+    padding-top: 50px;
+    .footer {
+      position: fixed;
+      bottom: 0px;
+      height: 64px;
+      width: 100%;
+      background: url(../images/actionbar-bg.png);
+      width: 720px;
+
+      .rewards-btn {
+        position: absolute;
+        display: block;
+        left: 137px;
+        top: -34px;
+        img {
+          width: 80px;
+        }
+      }
+
+      .profile-btn,
+      .cog-btn {
+        float:left;
+        padding: 20px;
+        margin-top:2px;
+        img {
+          width: 80%;
+        }
+      }
+
+      .cog-btn {
+        margin-left: 180px;
+      }
+    }
+    .listings {
+      padding: 10px 15px;
+      .listing {
+        border: 1px solid #5D9798;
+        border-radius: 15px;
+        margin-bottom: 10px;  
+       position: relative;
+        >div {
+          padding: 10px;
+        }
+        .point,
+        .type {
+          position: absolute;
+        }
+        .type {
+          background: url(../images/types.png) no-repeat center center;
+          height: 29px;
+          width: 30px;
+          right: 2px;
+          top: -18px;
+        }
+        .point {
+          right: -17px;
+          top: 1px;
+          text-align: center;
+          background: url(../images/points.png) no-repeat center center;
+          height: 40px;
+          width: 40px;
+          >span {
+            color: #FFF;
+          }
+          .amount {
+            font-size: 14px;
+            font-weight: bold;
+            display: block;
+          }
+        }
+
+        .photo {
+         border-right: 1px solid #5D9798;
+        }
+
+        .content {
+          color: #739698;
+       
+           h5 {
+            font-size: 16px;
+            padding: 0px;
+            margin: 0px;
+           }
+           p {
+            font-size: 10px;
+           }
+        }
+      }
+    }
+  }
+}
+
+
+@keyframes bounce {
+  0% {
+    left: 0px;
+    bottom: 0px;
+  }
+
+  25% {
+    bottom: -10px;
+  }
+
+  50% {
+    left: -50%;
+    bottom: 0px;
+  }
+
+  75% {
+    bottom: -10px;
+  }
+
+  100% {
+    left: 0px;
+    bottom: 0px;
+  }
+}
+
