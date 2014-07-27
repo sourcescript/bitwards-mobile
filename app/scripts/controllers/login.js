@@ -10,4 +10,5 @@
 angular.module('bitwardsApp')
   .controller('LoginCtrl', function ($scope) {
    	angular.element("body").attr('class','login');
+   	angular.element('.main-footer').addClass('hidden');
   });

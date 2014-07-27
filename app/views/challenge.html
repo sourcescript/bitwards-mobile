@@ -1,0 +1,68 @@
+<div class='nav'>
+	<h3 class='pull-right'>{{points}} Pts</h3>
+</div>	
+<div id='dashboard'>
+	<div class='challenge'>
+		<div ng-if="challenge == null">
+			<span class='fa fa-spin fa-spinner'></span> Loading..
+		</div>
+		<div ng-if="challenge">
+			<div class='cover-photo'>
+				<img class='img-responsive' src='{{challenge.image}}' />
+				<div class='type'>
+					<img src='images/icon-{{ challenge.type }}.png' class='img-responsive'/>
+				</div>
+				<div class='point'>
+					<span class='amount'>{{ challenge.point }}</span>
+					<span class='label'>pts</span>
+				</div>
+			</div>
+			<div class='title'>
+				<h3>{{ challenge.name }}</h3>
+			</div>
+			<div class='content'>
+				<p>{{ challenge.description }}</p>
+			</div>
+			<div class='buttons row'>
+				<div class='col-xs-6'>
+					<button class='btn btn-custom btn-block' data-role='accept-challenge' ng-click='challengeAccepted()' ng-if="challenge.status == 'not-accepted'">
+						<span class='fa fa-flag'></span> Challenge Accepted
+					</button>
+					<button class='btn btn-custom btn-block disabled' disabled="disabled" ng-if="challenge.status != 'not-accepted'">
+						{{ challenge.status == 'pending' ? 'Pending..'  : 'Completed'}}
+					</button>
+				</div>
+				<div class='col-xs-6'>
+					<button class='btn btn-custom btn-block'>
+						Move to Next Challenge
+					</button>
+				</div>
+				<hr />
+				<div class='row' ng-if="challenge.status == 'pending'">
+				<div class='col-xs-12 deed'>
+					<button class='btn btn-success btn-block' ng-if="challenge.type == 'image'" ng-click="challengeCompleted()">
+						<span class='fa fa-image'></span> Upload Image
+					</button>
+					<button class='btn btn-success btn-block' ng-if="challenge.type == 'social'" ng-click="challengeCompleted()">
+						<span class='fa fa-facebook'></span> Share on Facebook
+					</button>
+					<button class='btn btn-success btn-block' ng-if="challenge.type == 'manual'" ng-click="challengeCompleted()">
+						<span class='fa fa-user'></span> Deed is Done
+					</button>
+				</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div>
+<div class='overlay' ng-if="completed">
+	<h3>Congratulations, <br />You have successfully received the reward</h3>
+	<div class='point'>
+		<h3 class='amount'>{{ challenge.point }}</h3>
+		<span>Pts</span>
+	</div>
+	<div class='type'>
+		<img src='images/icon-{{ challenge.type }}-big.png' class='img-responsive'/>
+	</div>			
+</div>

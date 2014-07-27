@@ -1,36 +1,30 @@
+<div class='nav'>
+	<h3 class='pull-right'>{{ points }} Pts</h3>
+</div>	
 <div id='dashboard'>
 	<div class='listings'>
 		<div ng-if="challenges.length == 0">
 			<span class='fa fa-spin fa-spinner'></span> Loading..
 		</div>
-		<div class='col-md-12 listing clearfix' ng-repeat='challenge in challenges'>
+		<div class='col-md-12 listing clearfix' ng-repeat='challenge in challenges' ng-click='viewChallenge(challenge.id)' ng-class="challenge.status != 'not-accepted' ? 'gray-listing' : ''">
 			<div class='type'>
 				<img src='images/icon-{{ challenge.type }}.png' class='img-responsive'/>
 			</div>
 			<div class='point'>
 				<span class='amount'>{{ challenge.point }}</span>
-				<span>pts</span>
+				<span class='label'>pts</span>
 			</div>
 			<div class='col-xs-3 photo'>
-				<img src='{{ challenge.image }}' class='img-responsive'/>
+				<img src='{{ challenge.business.image }}' class='img-responsive'/>
 			</div>
 			<div class='col-xs-9 content'>
 				<h5>{{ challenge.name }}</h5>
-				<p>{{ challenge.description.substr(0, 50) }}</p>				
+				<p>{{ challenge.description.substr(0, 50) }}</p>			
+				<div class='progress' ng-if="challenge.status != 'not-accepted'">
+					<div class='progress-bar progress-bar-success progress-bar-striped active' role='progressbar' style="{{ challenge.status == 'pending'  ? 'width: 60%;' : 'width:100%'}}">
+					</div>
+				</div>
 			</div>
 		</div>
-	</div>
-	<div class='footer'>
-		<a class='rewards-btn' href='#'>
-			<img src='images/rewards-button.png' />
-		</a>
-
-		<a class='profile-btn' href='#'>
-			<img src='images/icon-profile.png' />
-		</a>
-
-		<a class='cog-btn' href='#'>
-			<img src='images/icon-settings.png' />
-		</a>
 	</div>
 </div>

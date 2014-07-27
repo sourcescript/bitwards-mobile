@@ -1,0 +1,23 @@
+<div class='nav'>
+	<h3 class='pull-right'>{{ points }} Pts</h3>
+</div>	
+<div id='dashboard' class='rewards'>
+	<div class='listings'>
+		<div ng-if="rewards.length == 0">
+			<span class='fa fa-spin fa-spinner'></span> Loading..
+		</div>
+		<div class='col-md-12 listing clearfix' ng-repeat='reward in rewards' ng-click="viewReward(reward.id)">
+			<div class='reward' ng-class="{'available': points >= reward.point}">
+				<span class='amount'>{{ reward.point }}</span>
+				<span class='label'>points</span>
+			</div>
+			<div class='col-xs-3 photo'>
+				<img src="{{ reward.business.image }}" class='img-responsive' />
+			</div>	
+			<div class='col-xs-9 content'>
+				<h3>{{ reward.name }}</h3>
+				<p>{{  reward.description.substr(0, 50)}}</p>
+			</div>
+		</div>
+	</div>
+</div>

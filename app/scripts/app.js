@@ -35,6 +35,14 @@ angular
         templateUrl: 'views/dashboard.html',
         controller: 'DashboardCtrl'
       })
+      .when('/challenge/:id', {
+        templateUrl: 'views/challenge.html',
+        controller: 'ChallengeCtrl'
+      })
+      .when('/rewards', {
+        templateUrl: 'views/rewards.html',
+        controller: 'RewardsCtrl'
+      })
       .otherwise({
         redirectTo: '/'
       });

@@ -9,7 +9,7 @@
  */
 angular.module('bitwardsApp')
   .factory('Challenge', function ($resource) {
-    var token = '6Tau0wGGvmPEx9R9iGzqKnDOycmxc9nlVVToFHw3';
+    var token = 'P8E9CCRKTAQkcGecfgZ53SPMMa1uoTltUKmR0lcE';
     return $resource("http://api.bitwards.sourcescript.ph/api/v1/challenges/:id", {}, {
         get: {
           method: 'GET',
